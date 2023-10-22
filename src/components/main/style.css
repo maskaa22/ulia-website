@@ -166,12 +166,13 @@ main {
     top: 80px;
     left: 30%;
   }
+
   .main__my-div_rectangle-top {
     position: absolute;
     top: 65px;
     left: 190px;
   }
-  
+
   .main__my-div_rectangle-left {
     position: absolute;
     top: 105px;
@@ -195,9 +196,38 @@ main {
   .books {
     margin-top: 110px;
   }
+
   .main__my-button {
     margin: 20px 0 0 90px;
     width: 250px;
+  }
+}
+
+@media (max-width: 390px) {
+  .main__my-div_rectangle-top {
+    left: 95px;
+  }
+
+  .main__my-div_rectangle-left {
+    left: 60px;
+  }
+
+  .main__my-img {
+    left: 20%;
+  }
+
+  .main__my-h1 {
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .main__my-button {
+    margin: 20px 0 0 40px;
+  }
+
+  .books {
+    margin-top: 170px;
   }
 }
 
