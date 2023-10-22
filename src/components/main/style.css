@@ -4,9 +4,9 @@ main {
 
 .main__my {
   width: 100%;
-  height: 500px;
+  /* height: 500px; */
   display: flex;
-  /* min-height: 95vh; */
+  min-height: 85vh;
 }
 
 .main__my-article-left {

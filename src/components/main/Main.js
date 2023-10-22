@@ -16,7 +16,6 @@ export class Main extends React.Component {
               используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
               без заметных изменений пять веков, но и перешагнул в электронный дизайн. </p>
             <button className='main__my-button'>Докладніше</button>
-            sdfzsdfvdfvdv
           </article>
           <article className='main__my-article-rigth'>
             <img alt='Юлія Ющенко' className='main__my-img' src={BigFoto} />
@@ -24,7 +23,9 @@ export class Main extends React.Component {
           </article>
         </section></div>
         <div className='container'>
-          <section className='books'>111111111111</section>
+          <section className='books'>
+            
+          </section>
         </div>
       </main>
     )
