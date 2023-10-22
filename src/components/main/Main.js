@@ -20,6 +20,7 @@ export class Main extends React.Component {
           <article className='main__my-article-rigth'>
             <img alt='Юлія Ющенко' className='main__my-img' src={BigFoto} />
             <div className='main__my-div_rectangle-top'></div><div className='main__my-div_rectangle-left'></div>
+            sdfzsdfvdfvdv
           </article>
         </section></div>
         <div className='container'>
