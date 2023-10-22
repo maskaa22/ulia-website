@@ -203,7 +203,7 @@ main {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 450px) {
   .main__my-div_rectangle-top {
     left: 95px;
   }
