@@ -16,11 +16,11 @@ export class Main extends React.Component {
               используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил
               без заметных изменений пять веков, но и перешагнул в электронный дизайн. </p>
             <button className='main__my-button'>Докладніше</button>
+            sdfzsdfvdfvdv
           </article>
           <article className='main__my-article-rigth'>
             <img alt='Юлія Ющенко' className='main__my-img' src={BigFoto} />
             <div className='main__my-div_rectangle-top'></div><div className='main__my-div_rectangle-left'></div>
-            sdfzsdfvdfvdv
           </article>
         </section></div>
         <div className='container'>
