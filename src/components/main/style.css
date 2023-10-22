@@ -229,6 +229,9 @@ main {
   .books {
     margin-top: 0;
 }
+.main__my-article-rigth {
+  height: 10px;
+}
 }
 
 .books {
