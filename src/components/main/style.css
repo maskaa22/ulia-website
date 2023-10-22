@@ -232,6 +232,10 @@ main {
 .main__my-article-rigth {
   height: 10px;
 }
+.main__my-article-left {
+  padding-top: 0;
+  margin-top: 0;
+}
 }
 
 .books {
