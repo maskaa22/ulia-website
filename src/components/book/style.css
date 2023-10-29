@@ -1,0 +1,7 @@
+.book-page-img {
+  width: 100%;
+}
+.flex-book-center {
+  display: flex;
+  justify-content: center;
+}

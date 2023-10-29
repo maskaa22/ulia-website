@@ -31,13 +31,13 @@ function Karysel() {
       />
     );
   }
-  
+
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
       <div
         className={className}
-        style={{ ...style, display: 'block', position: 'absolute', left: '20px', zIndex: 1}}
+        style={{ ...style, display: 'block', position: 'absolute', left: '20px', zIndex: 1 }}
         onClick={onClick}
       />
     );
@@ -45,17 +45,20 @@ function Karysel() {
 
 
   return (
-    <Slider {...settings}>
-      <div>
-        <img src={Slide1} alt='slide-img' className='slide-img' />
-      </div>
-      <div>
-        <img src={Slide2} alt='slide-img' className='slide-img' />
-      </div>
-      <div>
-        <img src={Slide3} alt='slide-img' className='slide-img' />
-      </div>
-    </Slider>
+    <section className='gallery'>
+      <div className='container'>
+        <Slider {...settings}>
+          <div>
+            <img src={Slide1} alt='slide-img' className='slide-img' />
+          </div>
+          <div>
+            <img src={Slide2} alt='slide-img' className='slide-img' />
+          </div>
+          <div>
+            <img src={Slide3} alt='slide-img' className='slide-img' />
+          </div>
+        </Slider></div>
+    </section>
   )
 }
 

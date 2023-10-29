@@ -15,12 +15,11 @@ function Header() {
     <nav className={`header__nav ${isOpen ? 'active' : ''}`}>
       <ul className='header__nav-list'>
         <li className='header__nav-item'><NavLink to={'/'}>Головна</NavLink></li>
-        <li className='header__nav-item'><NavLink to={'/'}>Про мене</NavLink></li>
-        <li className='header__nav-item'><NavLink to={'/'}>Вірші</NavLink></li>
-        <li className='header__nav-item'><NavLink to={'/'}>Книги</NavLink></li>
-        <li className='header__nav-item'><NavLink to={'/'}>Галерея</NavLink></li>
-        <li className='header__nav-item'><NavLink to={'/'}>Контакти</NavLink></li>
-        <li className='header__nav-item'><NavLink to={'/'}>Вхід</NavLink></li>
+        <li className='header__nav-item'><NavLink to={'/about_my'}>Про мене</NavLink></li>
+        <li className='header__nav-item'><NavLink to={'/poems'}>Вірші</NavLink></li>
+        <li className='header__nav-item'><NavLink to={"/books"} >Книги</NavLink></li>
+        <li className='header__nav-item'><NavLink to={'/galarys'}>Галерея</NavLink></li>
+        <li className='header__nav-item'><NavLink to={'/login'}>Вхід</NavLink></li>
       </ul>
     </nav>
     <button className='header__menu-button' onClick={() => setOpen(!isOpen)}><GiHamburgerMenu/></button></div></div>
