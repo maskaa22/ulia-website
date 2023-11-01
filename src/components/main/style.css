@@ -303,6 +303,7 @@ hr {
   font-size: 15px;
   font-weight: 700;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .gallery {

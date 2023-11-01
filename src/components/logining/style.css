@@ -1,0 +1,39 @@
+.form-wr {
+  display: flex;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+.form-h2 {
+  font-size: 6vh;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.inputWithIcon {
+  position: relative;
+}
+.inputWithIcon svg {
+  position: absolute;
+    left: -30px;
+    top: 10px;
+    margin: 10px;
+    font-size: 4.5vh;
+}
+.form-input {
+  height: 40px;
+  font-size: 3vh;
+  margin: 10px;
+  border-bottom: 1px solid #ffa577;
+}
+input {
+  outline:none;
+}
+.form-button {
+  margin: 40px 0 0 0;
+    height: 40px;
+    width: 100%;
+    background-color: #896E69;
+    color: #fff;
+    font-size: 3vh;
+    font-weight: 700;
+}

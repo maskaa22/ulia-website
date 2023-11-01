@@ -1,4 +1,4 @@
-
+import {useNavigate} from "react-router-dom";
 import './style.css';
 import Kobzar from '../../imgs/Kobzar.jpg';
 import TimeOpen from '../../imgs/TimeOpen.jpg';
@@ -6,6 +6,8 @@ import Vihola from '../../imgs/Vihola.jpg';
 
 
 function NewBooks() {
+
+  const navigate = useNavigate();
 
   return (
     <div className='container'>
@@ -21,7 +23,9 @@ function NewBooks() {
               <div className='books__cart'>
                 <img alt='Час відкриває істину' className='books__cart-img' src={TimeOpen} />
                 <p className='books__cart-p'>Час відкриває істину</p>
-                <div className='books__cart-flex'><button className='books__cart-button'>Подивитися</button></div>
+                <div className='books__cart-flex'><button className='books__cart-button' onClick={() => {
+                  navigate(`/book/:1`);
+                }}>Подивитися</button></div>
                 </div>
               <div className='books__cart'>
                 <img alt='Чорнобильська віхола' className='books__cart-img' src={Vihola} />

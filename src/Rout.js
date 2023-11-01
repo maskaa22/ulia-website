@@ -18,6 +18,7 @@ function Rout() {
     <Route path={'/books'} element={<Books/>} />
     <Route path={'/galarys'} element={<Galarys />} />
     <Route path={'/login'} element={<Logining />} />
+    <Route path={'/registration'} element={<Logining />} />
     <Route path={'/book/:id'} element={<BookItemForRead />} />
 
 

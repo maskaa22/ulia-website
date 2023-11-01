@@ -1,13 +1,15 @@
 
 // import './style.css';
 
+import Poem from "./Poem";
+
 
 
 function Poems() {
 
   return (
-    <div className='container'>
-    Poems
+    <div>
+    <Poem/>
   </div>
   )
 }
