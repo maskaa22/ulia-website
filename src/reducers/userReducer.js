@@ -4,16 +4,29 @@ const defaultState = {
   currentUser: {}
 }
 
-export default  function userReducer(state = defaultState, action) {
-  switch(action.type) {
-    
+export default function userReducer(state = defaultState, action) {
+  switch (action.type) {
+    case 'SET_USER':
+      return {
+        ...state,
+        isAuth: true,
+        currentUser: action.payload
+      }
+      case 'DEL_USER':
+      return {
+        ...state,
+        isAuth: false,
+        currentUser: {}
+      }
+
     default:
       return state
   }
 }
 
-console.log(2222)
 
+export const setUser = user => ({ type: 'SET_USER', payload: user })
+export const delUser = () => ({ type: 'DEL_USER'})
 
 
 

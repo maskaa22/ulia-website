@@ -1,4 +1,4 @@
-import React from "react";
+
 import {Route, Routes} from "react-router-dom";
 import Main from "./components/main/Main";
 import Books from "./components/books/Books";
@@ -7,8 +7,20 @@ import Poems from "./components/poems/Poems";
 import Galarys from "./components/galary/Galarys";
 import Logining from "./components/logining/Logining";
 import BookItemForRead from "./components/book/BookItemForRead";
+import Comments from '../src/components/comments/Comments';
+import React, { useState, useEffect } from 'react';
+import { getComments } from "./actions/user";
 
 function Rout() {
+
+  // const [comment, setComment] = useState([]);
+
+  // useEffect(() => {
+  //   getComments().then(comment => {
+  //     setComment(comment)
+  //     })
+  // }, []);
+
   return (
   <main className={'main'}>
   <Routes>
@@ -20,6 +32,7 @@ function Rout() {
     <Route path={'/login'} element={<Logining />} />
     <Route path={'/registration'} element={<Logining />} />
     <Route path={'/book/:id'} element={<BookItemForRead />} />
+    <Route path={'/comments'} element={<Comments/>} />
 
 
     {/* {(isAuth && role === WORLD_ADMIN) &&

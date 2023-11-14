@@ -1,0 +1,101 @@
+.create-poem-button {
+  margin: 40px 0 0 0;
+  height: 50px;
+  width: 200px;
+  background-color: #D55448;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.position-center {
+  display: flex;
+  justify-content: center;
+}
+
+.create-poem-container {
+  width: 600px;
+  min-height: 800px;
+  height: fit-content;
+  border: 1px solid #ffa577;
+  margin-top: 40px;
+}
+
+.position-between {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.create-poem-input,
+.create-poem-textarea {
+  width: 100%;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.create-poem-input {
+  border-bottom: 1px solid #896E69;
+}
+
+.create-poem-textarea {
+  height: fit-content;
+  min-height: 600px;
+  border: 1px solid #896E69;
+}
+
+.create-poem-lable {
+  font-size: 25px;
+}
+
+.save-button {
+  margin: 20px 0 0 0;
+}
+
+.create-poem-close {
+  margin: 10px;
+  display: flex;
+  justify-content: end;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hiden-block {
+  display: none;
+}
+
+.visible-block {
+  display: block;
+}
+
+.text-poem {
+  white-space: pre;
+}
+
+.container-poem {
+  border-bottom: 1px solid #D55448;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.title-poem {
+  margin-bottom: 10px;
+}
+
+.rating {
+  margin: 10px;
+}
+
+.add-comment {
+  margin-bottom: 10px;
+  height: 39px;
+  width: 200px;
+  background-color: #D55448;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}

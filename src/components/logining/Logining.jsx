@@ -2,6 +2,7 @@
 import './style.css';
 import { GoPeople } from 'react-icons/go';
 import { TbLock } from 'react-icons/tb';
+import { BiHighlight } from 'react-icons/bi';
 import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
 import { registration, login } from '../../actions/user';
@@ -27,7 +28,7 @@ function Logining() {
         <h2 className='form-h2'>{locationHeader === '/login' ? 'Авторизація': 'Реєстрація'}</h2>
         {locationHeader === '/registration' && <div className='inputWithIcon'>
           <input value={name} onChange={(e) => setName(e.target.value)} type='text' placeholder={`Введіть ім'я`} className='form-input'/>
-          <GoPeople/></div>}
+          <BiHighlight/></div>}
         <div className='inputWithIcon'>
           <input value={email} onChange={(e) => setEmail(e.target.value)} type='email' placeholder='Введіть імейл' className='form-input'/>
           <GoPeople/></div>
