@@ -423,4 +423,7 @@ hr {
   .contact__item {
     justify-content: center;
   }
+  .contact {
+    height: fit-content;
+}
 }
