@@ -409,6 +409,7 @@ hr {
 
   .contact__email {
     width: 100%;
+    margin-bottom: 15px;
   }
 
   .contact__flex {
