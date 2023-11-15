@@ -90,10 +90,10 @@ header {
   .header__nav {
     position: fixed;
     top: 0;
-    left: -275px;
+    left: -100%;
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 100%;
     height: 100%;
     background-color: #F9F9FF;
     border: 2px solid #FFA577;
@@ -102,6 +102,7 @@ header {
     border-bottom-right-radius: 16px;
     box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s linear;
+    overflow: auto;
   }
 
   .header__nav.active {
@@ -148,7 +149,8 @@ header {
 }
 @media (max-width: 450px) {
   .header__nav a {
-    color: black
+    color: black;
+    padding-left: 50px;
   }
   .header__nav a:active {
     color: white;
