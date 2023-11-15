@@ -73,6 +73,140 @@ main {
   background-color: red; */
 
 }
+.books {
+  width: 100%;
+  height: 600px;
+  margin-top: 40px;
+}
+
+.main__h2 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Lobster';
+}
+
+.main__hr {
+  color: #FFA577;
+  width: 100%;
+  size: 20px;
+  border: 1px solid;
+}
+
+hr {
+  display: block;
+}
+
+
+
+.books__flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.books__cart {
+  width: 250px;
+  height: 250px;
+}
+
+.books__cart-img {
+  width: 100%;
+}
+
+.books__cart-p {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.books__cart-flex, .contact__email-item-div-center {
+  display: flex;
+  justify-content: center;
+}
+
+.books__cart-button {
+  height: 40px;
+  width: 120px;
+  background-color: #FFA577;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.gallery {
+  width: 100%;
+    height: fit-content;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.slide-img {
+  width: 100%;
+}
+
+.contact {
+  width: 100%;
+  height: 550px;
+  margin-top: 80px;
+}
+
+.contact__flex {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.contact__flex-left, .contact__flex-rigth {
+  margin-top: 20px;
+}
+.contact__item {
+  padding: 10px;
+  display: flex;
+  justify-content: start;
+}
+.contact__label {
+  padding-left: 10px;
+}
+.contact__label-number {
+  font-family: 'Lora', serif;
+}
+.contact__email {
+  border: 1px solid #FFA577;
+  width: 70%;
+    margin: auto;
+}
+.main__h3 {
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+.contact__email-item-div {
+  width: 90%;
+    margin: auto;
+}
+.contact__email-icon {
+  font-size: 20px;
+    color: #FFA577;
+}
+.contact__email-item {
+  width: 100%;
+  height: 4vh;
+  background: transparent;
+  border: 1px solid #ffa577;
+}
+.contact-item-last {
+  margin-top: 10px;
+  height: 20vh;
+}
+.contact__email-button {
+  height: 40px;
+  width: 250px;
+  background-color: #896E69;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 20px;
+}
 
 @media (max-width: 1050px) {
   .main__my-img {
@@ -228,7 +362,7 @@ main {
   }
 
   .books {
-    margin-top: 0;
+    margin-top: 15px;
   }
 
   /* .main__my-article-rigth {
@@ -244,136 +378,3 @@ main {
 }
 
 
-
-.main__h2 {
-  font-size: 50px;
-  text-align: center;
-  margin-bottom: 10px;
-  font-family: 'Lobster';
-}
-
-.main__hr {
-  color: #FFA577;
-  width: 100%;
-  size: 20px;
-  border: 1px solid;
-}
-
-hr {
-  display: block;
-}
-
-.books {
-  width: 100%;
-  height: 600px;
-  margin-top: 40px;
-}
-
-.books__flex {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
-.books__cart {
-  width: 250px;
-  height: 250px;
-}
-
-.books__cart-img {
-  width: 100%;
-}
-
-.books__cart-p {
-  font-size: 20px;
-  text-align: center;
-  padding: 10px;
-}
-
-.books__cart-flex, .contact__email-item-div-center {
-  display: flex;
-  justify-content: center;
-}
-
-.books__cart-button {
-  height: 40px;
-  width: 120px;
-  background-color: #FFA577;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-.gallery {
-  width: 100%;
-    height: fit-content;
-    margin-bottom: 40px;
-    margin-top: 40px;
-}
-.slide-img {
-  width: 100%;
-}
-
-.contact {
-  width: 100%;
-  height: 550px;
-  margin-top: 80px;
-}
-
-.contact__flex {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-.contact__flex-left, .contact__flex-rigth {
-  margin-top: 20px;
-}
-.contact__item {
-  padding: 10px;
-  display: flex;
-  justify-content: start;
-}
-.contact__label {
-  padding-left: 10px;
-}
-.contact__label-number {
-  font-family: 'Lora', serif;
-}
-.contact__email {
-  border: 1px solid #FFA577;
-  width: 70%;
-    margin: auto;
-}
-.main__h3 {
-  text-align: center;
-  margin: 10px 0 20px 0;
-}
-.contact__email-item-div {
-  width: 90%;
-    margin: auto;
-}
-.contact__email-icon {
-  font-size: 20px;
-    color: #FFA577;
-}
-.contact__email-item {
-  width: 100%;
-  height: 4vh;
-  background: transparent;
-  border: 1px solid #ffa577;
-}
-.contact-item-last {
-  margin-top: 10px;
-  height: 20vh;
-}
-.contact__email-button {
-  height: 40px;
-  width: 250px;
-  background-color: #896E69;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 700;
-  margin: 20px;
-}
