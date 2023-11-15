@@ -103,11 +103,10 @@ header {
 
   .header__nav.active {
     transform: translateX(100%);
+  }
+  .header__nav.active > body {
     overflow: hidden;
   }
-  body.header__nav.active {
-    overflow: hidden;
-}
 
   .header__nav-list {
     flex: 1;
