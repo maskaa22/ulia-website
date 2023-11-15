@@ -104,7 +104,7 @@ header {
   .header__nav.active {
     transform: translateX(100%);
   }
-  .header__nav.active > body {
+  .body-overflow-hiden {
     overflow: hidden;
   }
 

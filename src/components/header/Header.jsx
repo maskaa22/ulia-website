@@ -17,8 +17,14 @@ function Header() {
   }, []);
 
   const isAuth = useSelector(state => state.user.isAuth);
-  const currentUser = useSelector(state => state.user.currentUser);
 
+  useEffect(() => {
+    if(isOpen) {
+      document.body.classList.add('body-overflow-hiden');
+    } else if(!isOpen) {
+      document.body.classList.remove('body-overflow-hiden');
+    }
+  }, [isOpen]);
 
   return (
 
