@@ -47,15 +47,15 @@ function Header() {
               {isAuth && <li className='header__nav-item' onClick={() => logout()}><NavLink ><ImExit className='icon-exit'/>Вихід</NavLink></li>}
             </ul>
           </nav> */}
-          <nav className={`header__nav ${isOpen ? 'active' : ''}`}>
-            <NavLink to={'/'} activeClassName={'active'} exact onClick={() => setOpen(!isOpen)}>Головна</NavLink>
+          <nav className={`header__nav ${isOpen ? 'active-open' : ''}`}>
+            <NavLink to={'/'} activeclassname={'active'} exact="true" onClick={() => setOpen(!isOpen)}>Головна</NavLink>
              {/* <NavLink to={'/about_my'} activeClassName={'active'}>Про мене</NavLink> */}
-              <NavLink to={'/poems'} activeClassName={'active'} onClick={() => setOpen(!isOpen)}>Вірші</NavLink>
-              <NavLink to={"/books"} activeClassName={'active'} onClick={() => setOpen(!isOpen)}>Книги</NavLink>
-              <NavLink to={'/galarys'} activeClassName={'active'} onClick={() => setOpen(!isOpen)}>Галерея</NavLink>
-              <NavLink to={'/comments'} activeClassName={'active'} onClick={() => setOpen(!isOpen)}>Відгуки</NavLink>
-              {!isAuth && <NavLink to={'/login'} activeClassName={'active'} onClick={() => setOpen(!isOpen)}>Вхід</NavLink>}
-              {!isAuth && <NavLink to={'/registration'} activeClassName={'active'} onClick={() => setOpen(!isOpen)}>Реєстрація</NavLink>
+              <NavLink to={'/poems'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Вірші</NavLink>
+              <NavLink to={"/books"} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Книги</NavLink>
+              <NavLink to={'/galarys'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Галерея</NavLink>
+              <NavLink to={'/comments'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Відгуки</NavLink>
+              {!isAuth && <NavLink to={'/login'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Вхід</NavLink>}
+              {!isAuth && <NavLink to={'/registration'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Реєстрація</NavLink>
               }
               
               {isAuth && <a onClick={() => {logout(); setOpen(!isOpen)}} className='nav-link-out'><ImExit className='icon-exit'/>Вихід</a>}

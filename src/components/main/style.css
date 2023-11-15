@@ -428,3 +428,8 @@ hr {
     height: fit-content;
 }
 }
+@media (max-width: 380px) {
+  .books {
+    margin-top: 100px;
+  }
+}

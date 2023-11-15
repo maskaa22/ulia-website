@@ -101,7 +101,7 @@ header {
     transition: transform 0.3s linear;
   }
 
-  .header__nav.active {
+  .header__nav.active-open {
     transform: translateX(100%);
   }
   .body-overflow-hiden {

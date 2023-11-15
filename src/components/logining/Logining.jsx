@@ -35,7 +35,6 @@ function Logining() {
         <div className='inputWithIcon'>
           <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Введіть пароль' className='form-input'/><TbLock/></div>
         <button className='form-button' onClick={() => {
-          
           if(locationHeader !== '/login') 
           {
             registration(name, email, password).then(res => {
