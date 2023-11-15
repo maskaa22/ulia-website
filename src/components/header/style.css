@@ -96,10 +96,7 @@ header {
     width: 100%;
     height: 100%;
     background-color: #F9F9FF;
-    border: 2px solid #FFA577;
     z-index: 999;
-    border-top-right-radius: 16px;
-    border-bottom-right-radius: 16px;
     box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s linear;
     overflow: auto;
@@ -148,9 +145,14 @@ header {
   }
 }
 @media (max-width: 450px) {
+  .header__nav {
+    text-align: center;
+  }
   .header__nav a {
     color: black;
     padding-left: 50px;
+    padding: 2rem;
+    font-size: 25px;
   }
   .header__nav a:active {
     color: white;
