@@ -381,13 +381,6 @@ hr {
     height: fit-content;
   }
 
-  /* .main__my-article-rigth {
-  height: 10px;
-}
-.main__my-article-left {
-  padding-top: 0;
-  margin-top: 0;
-} */
   .main__my {
     min-height: 78vh;
   }
@@ -438,7 +431,7 @@ hr {
     margin-top: 50px;
   }
 } */
-@media (max-width: 450px) and (max-height: 700px) {
+@media (max-width: 450px) and (max-height: 600px) {
   .books {
     margin-top: 100px;
   }
