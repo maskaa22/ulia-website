@@ -309,6 +309,8 @@ hr {
 @media (max-width: 576px) {
   .main__my {
     display: grid;
+
+    grid-template-columns: 1fr;
   }
 
   .main__my-img {
@@ -333,6 +335,8 @@ hr {
     width: 100%;
     position: relative;
     top: 300px;
+
+    height: fit-content;
   }
 
   .main__my-h1 {
@@ -377,7 +381,7 @@ hr {
   }
 
   .books {
-    margin-top: 4vh;
+    margin-top: 1vh;
     /* margin-top: -2vh; */
     height: fit-content;
   }
