@@ -433,6 +433,11 @@ hr {
     margin-top: 20px;
   }
 } */
+@media (min-width: 390px) and (max-width: 420px) {
+  .books {
+    margin-top: 50px;
+  }
+}
 @media (min-width: 320px) and (max-width: 389px) {
   .books {
     margin-top: 100px;
