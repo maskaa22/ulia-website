@@ -377,7 +377,7 @@ hr {
   }
 
   .books {
-    /* margin-top: 15px; */
+    margin-top: 15px;
     height: fit-content;
   }
 
@@ -433,12 +433,12 @@ hr {
     margin-top: 20px;
   }
 } */
-@media (min-width: 390px) and (max-width: 420px) {
+/* @media (min-width: 390px) and (max-width: 420px) {
   .books {
     margin-top: 50px;
   }
-}
-@media (min-width: 320px) and (max-width: 389px) {
+} */
+@media (min-width: 320px) and (max-width: 389px) and (max-height: 700px) {
   .books {
     margin-top: 100px;
   }
