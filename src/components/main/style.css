@@ -428,7 +428,7 @@ hr {
     height: fit-content;
 }
 }
-@media (min-width: 390px) {
+@media (min-width: 420px) {
   .books {
     margin-top: 20px;
   }
