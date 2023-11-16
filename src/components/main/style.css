@@ -377,12 +377,15 @@ hr {
   }
 
   .books {
-    margin-top: 2vw;
+    /* margin-top: 4vh; */
+    margin-top: -2vh;
     height: fit-content;
   }
 
   .main__my {
-    min-height: 78vh;
+    /* min-height: 78vh; */
+    /* height: 80vh; */
+    height: fit-content;
   }
 
 
