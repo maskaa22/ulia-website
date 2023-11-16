@@ -389,7 +389,11 @@ hr {
   .main__my {
     /* min-height: 78vh; */
     /* height: 80vh; */
-    height: fit-content;
+    /* height: fit-content;
+
+    display: grid;
+    grid-template-columns: 1fr; */
+    height: 650px;
   }
 
 
