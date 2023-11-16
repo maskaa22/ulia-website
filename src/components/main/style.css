@@ -431,7 +431,7 @@ hr {
     margin-top: 50px;
   }
 } */
-@media (max-width: 450px) and (max-height: 600px) {
+@media (max-width: 450px) and (max-height: 800px) {
   .books {
     margin-top: 100px;
   }
