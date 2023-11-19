@@ -7,6 +7,7 @@ import Karysel from './Karysel';
 import NewBooks from './NewBooks';
 import Contact from './Contact';
 import Home from './Home';
+import Events from './Events';
 
 
 function Main() {
@@ -15,6 +16,7 @@ function Main() {
         <Home/>
         <NewBooks/>
         <Karysel/>
+        <Events/>
         <Contact/>
       </>
     )

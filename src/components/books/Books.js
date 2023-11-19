@@ -10,7 +10,6 @@ function Books() {
     <div className='container'>
       <section className='books__item'>
         <h2 className='main__h2' id={'books'} >Книги</h2>
-        <hr className='main__hr' />
         <div className='books__main'>
           {
             books_items.map(book => <Book key={book.id} book={book} />)

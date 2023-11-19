@@ -25,7 +25,7 @@ function Rout() {
   <main className={'main'}>
   <Routes>
     <Route path={'/'} element={<Main />} />
-    <Route path={'/about_my'} element={<AboutMy />} />
+    <Route path={'/about_me'} element={<AboutMy />} />
     <Route path={'/poems'} element={<Poems/>} />
     <Route path={'/books'} element={<Books/>} />
     <Route path={'/galarys'} element={<Galarys />} />

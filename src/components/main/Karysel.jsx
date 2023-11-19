@@ -16,7 +16,7 @@ function Karysel() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />
@@ -26,7 +26,7 @@ function Karysel() {
     return (
       <div
         className={className}
-        style={{ ...style, display: 'block', position: 'absolute', right: '20px', zIndex: 1 }}
+        style={{ ...style, display: 'block', position: 'absolute', right: '10vh', zIndex: 1}}
         onClick={onClick}
       />
     );
@@ -37,7 +37,7 @@ function Karysel() {
     return (
       <div
         className={className}
-        style={{ ...style, display: 'block', position: 'absolute', left: '20px', zIndex: 1 }}
+        style={{ ...style, display: 'block', position: 'absolute', left: '10vh', zIndex: 1 }}
         onClick={onClick}
       />
     );
@@ -46,7 +46,7 @@ function Karysel() {
 
   return (
     <section className='gallery'>
-      <div className='container'>
+     
         <Slider {...settings}>
           <div>
             <img src={Slide1} alt='slide-img' className='slide-img' />
@@ -57,7 +57,7 @@ function Karysel() {
           <div>
             <img src={Slide3} alt='slide-img' className='slide-img' />
           </div>
-        </Slider></div>
+        </Slider>
     </section>
   )
 }

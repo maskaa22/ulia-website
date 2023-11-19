@@ -1,6 +1,30 @@
 .footer {
   width: 100%;
   height: 50px;
-  background-color: #FFA577;
-  color: #F9F9FF;
+  background-color: #f3f3f3;
+  color: black;
+}
+.footer-height {
+  height: 100%;
+}
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+.circle {
+  background-color: #ffa577;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.footer-center {
+  display: flex;
+  justify-content: center;
+}
+.footer-pos {
+  position: relative;
+
 }

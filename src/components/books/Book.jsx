@@ -21,7 +21,7 @@ function Book({ book }) {
         <div className='book__cart-flex'><button className='book__cart-button' onClick={()=> {
           navigate(`/book/:${book.id}`);
          
-        }}>Переглянути</button></div>
+        }}>ПЕРЕГЛЯНУТИ</button></div>
       </div>
   )
 }

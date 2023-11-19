@@ -116,3 +116,13 @@ export const addComment = async (user_id, text, poem_id) => {
     console.log(e)
   }
 }
+export const sendEmail = async (user_email, text) => {
+  try {
+
+   const response = await api.post(`${URL}/users/send`, {user_email, text});
+
+    return response.data;
+  } catch (e) {
+    console.log(e)
+  }
+}

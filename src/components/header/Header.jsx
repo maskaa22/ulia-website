@@ -31,7 +31,7 @@ function Header() {
     <header >
       <div className='container'>
         <div className='header'>
-          <span className='header__logo'>Logo</span>
+        <div className='header-flex'><div className='circle'/><span className='header__logo'>ЮЮЮ</span></div>
           {/* <nav className={`header__nav ${isOpen ? 'active' : ''}`}>
             <ul className='header__nav-list'>
               <li className='header__nav-item'><NavLink to={'/'} activeClassName={'active'} exact>Головна</NavLink></li>
@@ -48,17 +48,17 @@ function Header() {
             </ul>
           </nav> */}
           <nav className={`header__nav ${isOpen ? 'active-open' : ''}`}>
-            <NavLink to={'/'} activeclassname={'active'} exact="true" onClick={() => setOpen(!isOpen)}>Головна</NavLink>
+            <NavLink to={'/'} activeclassname={'active'} exact="true" onClick={() => setOpen(!isOpen)}>ГОЛОВНА</NavLink>
              {/* <NavLink to={'/about_my'} activeClassName={'active'}>Про мене</NavLink> */}
-              <NavLink to={'/poems'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Вірші</NavLink>
-              <NavLink to={"/books"} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Книги</NavLink>
-              <NavLink to={'/galarys'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Галерея</NavLink>
-              <NavLink to={'/comments'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Відгуки</NavLink>
-              {!isAuth && <NavLink to={'/login'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Вхід</NavLink>}
-              {!isAuth && <NavLink to={'/registration'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>Реєстрація</NavLink>
+              <NavLink to={'/poems'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>ВІРШІ</NavLink>
+              <NavLink to={"/books"} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>КНИГИ</NavLink>
+              <NavLink to={'/galarys'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>ГАЛЕРЕЯ</NavLink>
+              <NavLink to={'/comments'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>ВІДГУКИ</NavLink>
+              {!isAuth && <NavLink to={'/login'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>ВХІД</NavLink>}
+              {!isAuth && <NavLink to={'/registration'} activeclassname={'active'} onClick={() => setOpen(!isOpen)}>РЕЄСТРАЦІЯ</NavLink>
               }
               
-              {isAuth && <a onClick={() => {logout(); setOpen(!isOpen)}} className='nav-link-out'><ImExit className='icon-exit'/>Вихід</a>}
+              {isAuth && <a onClick={() => {logout(); setOpen(!isOpen)}} className='nav-link-out'><ImExit className='icon-exit'/>ВИХІД</a>}
               {/* <button className='header__menu-button' onClick={() => setOpen(!isOpen)}><GiHamburgerMenu /></button> */}
           </nav>
           <button className='header__menu-button' onClick={() => setOpen(!isOpen)}><GiHamburgerMenu /></button>

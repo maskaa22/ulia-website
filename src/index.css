@@ -12,7 +12,8 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
+  font-family: "Zilla Slab";
 }
 
 code {
@@ -28,4 +29,8 @@ code {
 
 .main {
   flex: 1 1 auto;
+}
+
+input {
+  font-family: "Zilla Slab";
 }
