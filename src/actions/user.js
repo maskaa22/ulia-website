@@ -79,7 +79,7 @@ export const createPoem = async (user_id, name, text) => {
 export const getPoem = async () => {
   try {
 
-    const response = await api.get(`${URL}/poems`);
+    const response = await api.get(`/poems`);
 
     return response.data;
   } catch (e) {
