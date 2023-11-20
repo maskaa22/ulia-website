@@ -71,7 +71,7 @@ class CreatePoem extends React.Component {
 
         <div>
           {
-            poems.map(poem => <Poem key={poem._id} poem={poem} handleOpen={this.props.handleOpen} setPoem_id={this.props.setPoem_id}/>)
+            poems.map((poem, i) => <Poem i={i} key={poem._id} poem={poem} handleOpen={this.props.handleOpen} setPoem_id={this.props.setPoem_id}/>)
           }
         </div>
       </>

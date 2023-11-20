@@ -7,18 +7,18 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
-  margin: 20px 0;
+  padding-top: 30px;
 }
 
 .comment {
-  background-color: #ffa5774d;
-  text-align: center;
-  padding: 10px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 4px -2px 12px 0px red;
+  background-color: #ffa57761;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px -2px 19px 0px #ff5722ab;
     border-radius: 10px;
 }
 .commeny-icon {
@@ -32,4 +32,9 @@
 .comment-poem {
   border-bottom: 1px solid #d55448;
     font-size: 15px;
+}
+.comment-bac-col {
+  background-color: #f3f3f3;
+  height: 90vh;
+ 
 }

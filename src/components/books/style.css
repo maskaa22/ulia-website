@@ -26,13 +26,14 @@
   width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 40px;
+  padding-top: 30px;
 }
 
 .book__cart_item {
   width: 30%;
   margin-bottom: 50px;
   overflow: hidden;
+  background-color: #e5e5e5;
 }
 
 .book__cart-img {
@@ -68,7 +69,6 @@
   color: #fff;
   font-size: 15px;
   font-weight: 700;
-  margin-bottom: 10px;
   cursor: pointer;
   letter-spacing: 1px;
   box-shadow: inset 0 0 0 0 #FFA577;
@@ -94,4 +94,6 @@
 
 .book__cart-button-buy:hover {
   box-shadow: inset 15vw 0 0 0 black;
+}.books__item {
+  background-color: #f3f3f3;
 }

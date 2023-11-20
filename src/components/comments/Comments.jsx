@@ -141,13 +141,14 @@ function Comments() {
   }, []);
 
   return (
+    <div className='comment-bac-col'>
     <div className='container'>
       <div className='container-comments'>
         {
           comments.map(comment => <Comment key={comment._id} comment={comment} />)
         }
       </div>
-    </div>
+    </div></div>
   )
 }
 export default Comments;

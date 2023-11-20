@@ -3,7 +3,6 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
   height: fit-content;
-  margin-top: 30px;
   margin-bottom: 30px;
 }
 
@@ -21,4 +20,10 @@
 }
 .galary-img:hover {
   transform: scale(1.05);
+}
+.galary-bc {
+  background-color: #f3f3f3;
+  /* height: 90vh; */
+ padding-top: 30px;
+ padding-bottom: 30px;
 }

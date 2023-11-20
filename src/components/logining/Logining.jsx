@@ -22,6 +22,7 @@ function Logining() {
   const navigate = useNavigate();
 
   return (
+    <div className='log-bc'>
     <div className='container'>
     <div className="form-wr">
       <div>
@@ -52,7 +53,7 @@ function Logining() {
         }}>{locationHeader === '/login' ? 'Вхід': 'Зареєструватися'}</button>
       </div>
     </div>
-  </div>
+  </div></div>
   )
 }
 

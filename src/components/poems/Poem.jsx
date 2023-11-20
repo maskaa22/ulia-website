@@ -6,14 +6,14 @@ import './style.css';
 import { useSelector } from 'react-redux';
 
 
-
-function Poem({ poem, handleOpen, setPoem_id }) {
+function Poem({ poem, handleOpen, setPoem_id, i }) {
 
   const isAuth = useSelector(state => state.user.isAuth);
   const currentUser = useSelector(state => state.user.currentUser);
 
+
   return (
-    <div className='container-poem'>
+    <div className={i%2===0 ? 'container-poem grey' : 'container-poem'}>
       <h2 className='title-poem'>{poem.name}</h2>
       <div className='text-poem'>{poem.text}</div>
       <div className='rating'><BasicRating id={poem._id} rating={poem.rating} /></div>

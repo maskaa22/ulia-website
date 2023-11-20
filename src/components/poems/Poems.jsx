@@ -28,7 +28,7 @@ function Poems() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div className="container">
+    <div >
       <AddCommentModal user_id={currentUser.id} open={open} handleClose={handleClose} poem_id={poem_id}/>
       <CreatePoem currentUser={currentUser} handleOpen={handleOpen} setPoem_id={setPoem_id}/>
     </div>

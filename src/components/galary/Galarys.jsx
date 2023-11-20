@@ -5,6 +5,7 @@ import './style.css';
 function Galarys() {
 
   return (
+    <div className='galary-bc'>
     <div className='container'>
     <div className="galary-container">
       <div className='galary-item'>
@@ -32,6 +33,7 @@ function Galarys() {
         </div>
       </div>
     </div>
+  </div>
   </div>
   )
 }
