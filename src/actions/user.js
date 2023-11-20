@@ -13,7 +13,7 @@ const api = axios.create({
 
 export const registration = async (name, email, password) => {
   try {
-    const response = await api.post(`${URL}/users/registration`, { name, email, password });
+    const response = await api.post(`/users/registration`, { name, email, password });
 
     return response.data;
   } catch (e) {
@@ -23,7 +23,7 @@ export const registration = async (name, email, password) => {
 export const login = async (email, password) => {
   try {
 
-    const response = await api.post(`${URL}/users/login`, { email, password });
+    const response = await api.post(`/users/login`, { email, password });
 
     localStorage.setItem('token', response.data.access_token);
 
@@ -48,7 +48,7 @@ export const logout = async () => {
 export const refresh = async () => {
   try {
 
-    const response = await api.get(`${URL}/users/refresh`, { withCredentials: true });
+    const response = await api.get(`/users/refresh`, { withCredentials: true });
 
   
 
@@ -68,7 +68,7 @@ export const refresh = async () => {
 export const createPoem = async (user_id, name, text) => {
   try {
     const rating = 0;
-    const response = await api.post(`${URL}/poems`, { user_id, name, text, rating });
+    const response = await api.post(`/poems`, { user_id, name, text, rating });
 
 
     return response.data;
@@ -89,7 +89,7 @@ export const getPoem = async () => {
 export const updatePoem = async (_id, rating) => {
   try {
 
-    const response = await api.post(`${URL}/poems/rating`, {_id, rating });
+    const response = await api.post(`/poems/rating`, {_id, rating });
 
     return response.data;
   } catch (e) {
@@ -99,7 +99,7 @@ export const updatePoem = async (_id, rating) => {
 export const getComments = async () => {
   try {
 
-    const response = await api.get(`${URL}/comments`);
+    const response = await api.get(`/comments`);
 
     return response.data;
   } catch (e) {
@@ -109,7 +109,7 @@ export const getComments = async () => {
 export const addComment = async (user_id, text, poem_id) => {
   try {
 
-   const response = await api.post(`${URL}/comments`, {user_id, text, poem_id});
+   const response = await api.post(`/comments`, {user_id, text, poem_id});
 
     return response.data;
   } catch (e) {
@@ -119,7 +119,7 @@ export const addComment = async (user_id, text, poem_id) => {
 export const sendEmail = async (user_email, text) => {
   try {
 
-   const response = await api.post(`${URL}/users/send`, {user_email, text});
+   const response = await api.post(`/users/send`, {user_email, text});
 
     return response.data;
   } catch (e) {
