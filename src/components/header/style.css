@@ -1,6 +1,6 @@
 header {
   background-color: #f3f3f3;
-  
+
   /* box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
@@ -14,21 +14,23 @@ header {
   height: 70px;
   justify-content: space-between;
 }
+
 .header-flex {
   display: flex;
   justify-content: center;
   position: relative;
 }
+
 .header__logo {
   font-size: 20px;
-    line-height: 1;
-    font-weight: 700;
-    color: black;
-    font-family: 'Lobster';
-    position: absolute;
-    left: 5px;
-    white-space: nowrap;
-    top: 2px;
+  line-height: 1;
+  font-weight: 700;
+  color: black;
+  font-family: 'Lobster';
+  position: absolute;
+  left: 5px;
+  white-space: nowrap;
+  top: 2px;
 }
 
 /* .header__nav {
@@ -40,6 +42,7 @@ header {
   height: 100%;
   letter-spacing: 1px;
 }
+
 .header__nav a {
   display: inline-block;
   text-decoration: none;
@@ -47,9 +50,11 @@ header {
   padding: 1.6rem;
   font-family: "Zilla Slab";
 }
+
 .header__nav a:last-child {
   padding-right: 0;
 }
+
 .nav-link-out {
   cursor: pointer;
 }
@@ -60,15 +65,16 @@ header {
   padding: 0;
 
   height: 100%;
-    text-align: center;
-    align-items: center;
+  text-align: center;
+  align-items: center;
 }
+
 .header__nav-item {
   height: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__nav-item a {
@@ -89,6 +95,7 @@ header {
 .icon-exit {
   font-size: 15px;
 }
+
 /* .header__nav-item:hover {
   background-color: #f7b99a;
   color: #FFA577;
@@ -97,6 +104,7 @@ header {
   background-color: #f7b99a;
   color: white;
 }
+
 @media (max-width: 576px) {
   .header__nav {
     position: fixed;
@@ -115,6 +123,7 @@ header {
   .header__nav.active-open {
     transform: translateX(100%);
   }
+
   .body-overflow-hiden {
     overflow: hidden;
   }
@@ -143,30 +152,37 @@ header {
   .header__menu-button {
     display: block;
     margin-left: auto;
-    margin-right: 40px;
     width: 24px;
     height: 24px;
     background-color: transparent;
     padding: 0;
     border: 0;
-    color: #F9F9FF;
+    color: black;
   }
 
   .header__menu-button svg {
     width: 100%;
     height: 100%;
   }
+
+  .header__nav a {
+    padding: 2vh;
+    text-transform: uppercase;
+  }
 }
+
 @media (max-width: 450px) {
   .header__nav {
     text-align: center;
   }
+
   .header__nav a {
     color: black;
     padding-left: 50px;
     padding: 2rem;
     font-size: 25px;
   }
+
   .header__nav a:active {
     color: white;
   }
