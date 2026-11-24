@@ -1,28 +1,25 @@
-
 import './style.css';
-import {useNavigate} from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
+import { FiBookOpen, FiShoppingBag } from 'react-icons/fi';
 
 function Book({ book }) {
-  const navigate = useNavigate();
-
-  
-
   return (
-      <div className='book__cart_item'>
-        <img alt={book.title} className='book__cart-img' src={'./img/' + book.foto}/>
-        <p className='book__cart-p-title'>{book.title}</p>
-        <p className='book__cart-p-text'>{book.text}</p>
-        <div className='book__cart-flex-price'>
-          <div className='book__cart-flex'><p className='book__cart-p-left'>Вартість - </p><p className='book__cart-p'>{book.price} грн.</p></div>
-          <button className='book__cart-button-buy'>Замовити</button>
-          </div>
-        <div className='book__cart-flex'><button className='book__cart-button' onClick={()=> {
-          navigate(`/book/:${book.id}`);
-         
-        }}>ПЕРЕГЛЯНУТИ</button></div>
+    <article className='book card'>
+      <div className='book__cover'>
+        <img alt={`Обкладинка книги «${book.title}»`} src={process.env.PUBLIC_URL + '/img/' + book.foto} loading='lazy' />
       </div>
+      <div className='book__body'>
+        <h2 className='book__title'>{book.title}</h2>
+        <p className='book__text'>{book.text}</p>
+        <p className='book__price'>{book.price} грн</p>
+        <div className='book__actions'>
+          {book.readable && (
+            <Link to={`/book/:${book.id}`} className='btn btn--sm'><FiBookOpen aria-hidden='true' /> Читати онлайн</Link>
+          )}
+          <Link to='/#contact' className={`btn btn--sm ${book.readable ? 'btn--ghost' : ''}`}><FiShoppingBag aria-hidden='true' /> Замовити</Link>
+        </div>
+      </div>
+    </article>
   )
 }
 

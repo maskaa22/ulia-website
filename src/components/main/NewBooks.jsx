@@ -1,47 +1,35 @@
-import {useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
 import './style.css';
+import { FiArrowRight } from 'react-icons/fi';
 import Kobzar from '../../imgs/Kobzar.jpg';
 import TimeOpen from '../../imgs/TimeOpen.jpg';
 import Vihola from '../../imgs/Vihola.jpg';
 
+const NEW_BOOKS = [
+  { title: 'Кобзар моєї епохи', cover: Kobzar, to: '/books' },
+  { title: 'Час відкриває істину', cover: TimeOpen, to: '/book/:1', readable: true },
+  { title: 'Чорнобильська віхола', cover: Vihola, to: '/books' },
+];
 
 function NewBooks() {
-
-  const navigate = useNavigate();
-
   return (
-    <div className='container'>
-          <section className='books'>
-            <h2 className='main__h2' id={'books'} >Новинки</h2>
-            {/* <hr className='main__hr'/> */}
-            <div className='books__flex'>
-              <div className='books__cart'>
-                <img alt='Кобзар моєї епохи' className='books__cart-img' src={Kobzar} />
-                <p className='books__cart-p'>Кобзар моєї епохи</p>
-                <div className='books__cart-flex'><button className='books__cart-button'>Подивитися</button></div>
-                </div>
-              <div className='books__cart'>
-                <img alt='Час відкриває істину' className='books__cart-img' src={TimeOpen} />
-                <p className='books__cart-p'>Час відкриває істину</p>
-                <div className='books__cart-flex'><button className='books__cart-button' onClick={() => {
-                  navigate(`/book/:1`);
-                }}>Подивитися</button></div>
-                </div>
-              <div className='books__cart'>
-                <img alt='Чорнобильська віхола' className='books__cart-img' src={Vihola} />
-                <p className='books__cart-p'>Чорнобильська віхола</p>
-                <div className='books__cart-flex'><button className='books__cart-button'>Подивитися</button></div>
-                </div>
-                <div className='books__cart'>
-                <img alt='Час відкриває істину' className='books__cart-img' src={TimeOpen} />
-                <p className='books__cart-p'>Час відкриває істину</p>
-                <div className='books__cart-flex'><button className='books__cart-button' onClick={() => {
-                  navigate(`/book/:1`);
-                }}>Подивитися</button></div>
-                </div>
-            </div>
-          </section>
+    <section className='section' id='books'>
+      <div className='container'>
+        <div className='section-head'>
+          <h2>Нові книги</h2>
+          <Link to='/books' className='link-arrow'>Усі книги <FiArrowRight aria-hidden='true' /></Link>
         </div>
+        <div className='book-grid'>
+          {NEW_BOOKS.map(book => (
+            <Link key={book.title} to={book.to} className='book-tile'>
+              <img src={book.cover} alt={`Обкладинка книги «${book.title}»`} loading='lazy' />
+              <span className='book-tile__title'>{book.title}</span>
+              <span className='book-tile__cta'>{book.readable ? 'Читати онлайн' : 'Детальніше'} <FiArrowRight aria-hidden='true' /></span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 

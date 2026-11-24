@@ -1,5 +1,5 @@
 
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import Main from "./components/main/Main";
 import Books from "./components/books/Books";
 import AboutMy from "./components/about_my/AboutMy";
@@ -8,10 +8,24 @@ import Galarys from "./components/galary/Galarys";
 import Logining from "./components/logining/Logining";
 import BookItemForRead from "./components/book/BookItemForRead";
 import Comments from '../src/components/comments/Comments';
-import React, { useState, useEffect } from 'react';
-import { getComments } from "./actions/user";
+import React, { useEffect } from 'react';
+import NotFound from "./components/not_found/NotFound";
 
 function Rout() {
+
+  const { pathname, hash } = useLocation();
+
+  // scroll to top on page change, or to the #anchor if the link has one
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        el.scrollIntoView();
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   // const [comment, setComment] = useState([]);
 
@@ -23,6 +37,7 @@ function Rout() {
 
   return (
   <main className={'main'}>
+  <div className={'page'} key={pathname}>
   <Routes>
     <Route path={'/'} element={<Main />} />
     <Route path={'/about_me'} element={<AboutMy />} />
@@ -33,6 +48,7 @@ function Rout() {
     <Route path={'/registration'} element={<Logining />} />
     <Route path={'/book/:id'} element={<BookItemForRead />} />
     <Route path={'/comments'} element={<Comments/>} />
+    <Route path={'*'} element={<NotFound />} />
 
 
     {/* {(isAuth && role === WORLD_ADMIN) &&
@@ -56,6 +72,7 @@ function Rout() {
     <Route path={'/login-reset-password'} element={<WritingEmailForm />} />
     <Route path={'auth/activate/:token'} element={<ActiveForm />} /> */}
   </Routes>
+  </div>
   </main>
   );
 }

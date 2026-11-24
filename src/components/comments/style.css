@@ -1,40 +1,47 @@
-.br {
-  white-space: pre;
-  margin-top: 10px;
+.comments {
+  padding-bottom: 4rem;
 }
 
-.container-comments {
+.comments__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-  padding-top: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
 }
 
 .comment {
-  background-color: #ffa57761;
-    text-align: center;
-    padding: 10px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 4px -2px 19px 0px #ff5722ab;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.5rem;
 }
-.commeny-icon {
-  font-size: 6vh;
-  color: #D55448;
+
+.comment__icon {
+  color: var(--peach);
+  font-size: 2rem;
 }
-.user-name {
-  margin-top: 10px;
-  color: #D55448;
+
+.comment__text {
+  flex: 1;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
-.comment-poem {
-  border-bottom: 1px solid #d55448;
-    font-size: 15px;
+
+.comment__meta {
+  display: grid;
+  gap: 0.1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.875rem;
 }
-.comment-bac-col {
-  background-color: #f3f3f3;
-  height: 90vh;
- 
+
+.comment__author {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.comment__poem {
+  color: var(--muted);
 }

@@ -1,7 +1,33 @@
+.reader {
+  padding-bottom: 4rem;
+}
+
+.reader__head {
+  padding-block: 2rem 1.5rem;
+  text-align: center;
+}
+
+.reader__head h1 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+}
+
+.reader__head p {
+  color: var(--muted);
+}
+
 .book-page-img {
   width: 100%;
+  background: #fff;
 }
+
 .flex-book-center {
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
+  padding-block: 0.5rem;
+}
+
+.flex-book-center .stf__parent {
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
 }
