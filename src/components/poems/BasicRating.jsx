@@ -1,22 +1,20 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import { updatePoem } from '../../actions/user';
 
 
 export default function BasicRating({id, rating}) {
-  const [value, setValue] = React.useState(rating);
+  const [value, setValue] = React.useState(rating || 0);
 
   return (
-    <Box>
-      <Rating
-        name="simple-controlled"
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-          updatePoem(id, newValue)
-        }}
-      /> 
-    </Box>
+    <Rating
+      name={`rating-${id}`}
+      value={value}
+      sx={{ color: 'var(--accent)', '& .MuiRating-iconEmpty': { color: 'var(--line)' } }}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+        updatePoem(id, newValue)
+      }}
+    />
   );
 }

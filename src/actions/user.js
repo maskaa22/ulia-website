@@ -3,7 +3,7 @@ import { store } from "../reducers";
 import { setUser, delUser } from "../reducers/userReducer";
 
 
-const URL = 'https://ulia-server.onrender.com/';
+const URL = process.env.REACT_APP_API_URL || 'https://ulia-server.onrender.com/';
 
 
 const api = axios.create({

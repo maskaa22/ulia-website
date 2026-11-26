@@ -5,13 +5,14 @@ import { RiDoubleQuotesL } from 'react-icons/ri';
 function Comment({ comment }) {
 
   return (
-    <div className='comment'>
-      <div>
-        <p className='comment-poem'>{comment.poem_id.name}</p>
-      <div className="br">{comment.text}</div>
-      <p className='user-name'>{comment.user_id.name}</p>
-      <div className='commeny-icon'><RiDoubleQuotesL/></div>
-    </div></div>
+    <figure className='comment card'>
+      <RiDoubleQuotesL className='comment__icon' aria-hidden='true' />
+      <blockquote className='comment__text'>{comment.text}</blockquote>
+      <figcaption className='comment__meta'>
+        <span className='comment__author'>{comment.user_id?.name || 'Читач'}</span>
+        {comment.poem_id?.name && <span className='comment__poem'>до вірша «{comment.poem_id.name}»</span>}
+      </figcaption>
+    </figure>
   )
 
 

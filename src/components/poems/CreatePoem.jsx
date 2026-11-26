@@ -1,82 +1,100 @@
-
 import './style.css';
 import { IoClose } from 'react-icons/io5';
-import React from 'react';
+import { FiSearch, FiPlus } from 'react-icons/fi';
+import React, { useEffect, useState, useCallback } from 'react';
 import { createPoem, getPoem } from '../../actions/user';
 import Poem from './Poem';
 
+function CreatePoem({ currentUser, handleOpen, setPoem_id }) {
+  const [poems, setPoems] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState('');
+  const [formOpen, setFormOpen] = useState(false);
+  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
 
-class CreatePoem extends React.Component {
+  const loadPoems = useCallback(() => {
+    return getPoem().then(data => {
+      setPoems(data || []);
+      setLoading(false);
+    });
+  }, []);
 
-  constructor(props) {
-    super(props);
+  useEffect(() => { loadPoems(); }, [loadPoems]);
 
-    this.state = {
-      visibleCreatePoem: 'hiden-block',
-      title: '',
-      text: '',
-      poems: []
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.setVisibleCreatePoem = this.setVisibleCreatePoem.bind(this);
-  }
+  const publish = async () => {
+    if (!title.trim() || !text.trim()) return;
+    await createPoem(currentUser.id, title, text);
+    setTitle('');
+    setText('');
+    setFormOpen(false);
+    loadPoems();
+  };
 
-  componentDidMount() {
-    getPoem().then(poem => {this.setState({ poems: poem })})
-  }
-    componentDidUpdate(prevProps, prevState) {
-    if (prevState.text !== this.state.text) {
-      this.componentDidMount()
-    }
+  const q = query.trim().toLowerCase();
+  const visible = q
+    ? poems.filter(p => (p.name || '').toLowerCase().includes(q) || (p.text || '').toLowerCase().includes(q))
+    : poems;
 
-  }
+  return (
+    <div className='container poems'>
+      <div className='poems__toolbar'>
+        {poems.length > 0 && (
+          <label className='search'>
+            <FiSearch aria-hidden='true' />
+            <input
+              type='search'
+              placeholder='Пошук за назвою або рядком…'
+              aria-label='Пошук віршів'
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </label>
+        )}
+        {currentUser.role === 'admin' && (
+          <button className='btn' onClick={() => setFormOpen(true)}><FiPlus aria-hidden='true' /> Додати вірш</button>
+        )}
+      </div>
 
-  handleChange = (e) => {
-    this.setState({
-      ...this.state,
-      [e.target.name]: e.target.value,
-    })
-  }
+      {formOpen && (
+        <div className='create-poem card'>
+          <button className='create-poem__close icon-btn' onClick={() => setFormOpen(false)} aria-label='Закрити'><IoClose /></button>
+          <label className='field'>
+            <span>Назва</span>
+            <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
+          </label>
+          <label className='field'>
+            <span>Текст</span>
+            <textarea rows='12' value={text} onChange={(e) => setText(e.target.value)} />
+          </label>
+          <button className='btn' onClick={publish}>Опублікувати</button>
+        </div>
+      )}
 
-  setVisibleCreatePoem = (visible) => {
-    this.setState({ visibleCreatePoem: visible })
-  }
+      {loading && (
+        <div className='poems__list'>
+          {[0, 1, 2].map(i => <div key={i} className='skeleton' style={{ height: 280 }} />)}
+        </div>
+      )}
 
+      {!loading && poems.length === 0 && (
+        <p className='empty'>Вірші поки не завантажились. Сервер може прокидатися — спробуйте оновити сторінку за хвилину.</p>
+      )}
 
-  render() {
-    const { poems } = this.state;
+      {!loading && poems.length > 0 && visible.length === 0 && (
+        <p className='empty'>За запитом «{query}» нічого не знайдено.</p>
+      )}
 
-    return (
-      <>
-        {this.props.currentUser.role === 'admin' && <div className='position-center'><button className='create-poem-button' onClick={() => this.setVisibleCreatePoem('visible-block')}>Додати вірш</button></div>}
-        
-        <div className='position-center'>
-          <div className={`create-poem-container ${this.state.visibleCreatePoem}`}>
-            <div className='create-poem-close' onClick={() => this.setVisibleCreatePoem('hiden-block')}><IoClose /></div>
-            <div className='position-between'>
-              <label className='create-poem-lable'>Назва:</label>
-              <input className='create-poem-input' value={this.state.title} onChange={this.handleChange} type='text' name="title" />
-            </div>
-            <div className='position-between'>
-              <label className='create-poem-lable'>Текст:</label>
-              <textarea className='create-poem-textarea' value={this.state.text} onChange={this.handleChange} name="text" />
-            </div>
-            <div className='position-center'><button className='create-poem-button save-button' onClick={() => {
-              createPoem(this.props.currentUser.id, this.state.title, this.state.text);
-            this.setState({ title: '', text: '' });
-            this.setVisibleCreatePoem('hiden-block')
-            }}>Опублікувати</button></div>
+      {!loading && visible.length > 0 && (
+        <>
+          <p className='poems__count'>{q ? `Знайдено: ${visible.length}` : `Віршів: ${poems.length}`}</p>
+          <div className='poems__list'>
+            {visible.map(poem => <Poem key={poem._id} poem={poem} handleOpen={handleOpen} setPoem_id={setPoem_id} />)}
           </div>
-        </div>
-
-        <div>
-          {
-            poems.map((poem, i) => <Poem i={i} key={poem._id} poem={poem} handleOpen={this.props.handleOpen} setPoem_id={this.props.setPoem_id}/>)
-          }
-        </div>
-      </>
-    )
-  }
+        </>
+      )}
+    </div>
+  )
 }
 
 export default CreatePoem;

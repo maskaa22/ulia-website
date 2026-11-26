@@ -1,42 +1,84 @@
-
 import './style.css';
-import { HiPhone } from 'react-icons/hi';
+import { FiPhone, FiMail, FiMapPin, FiSend } from 'react-icons/fi';
 import { BiLogoTelegram } from 'react-icons/bi';
-import { FaLocationDot } from 'react-icons/fa6';
-import { MdEmail } from 'react-icons/md';
 import { sendEmail } from '../../actions/user';
 import React, { useState } from 'react';
+import { SwalFunction } from '../../utils/SwalFunction';
 
+const CONTACTS = [
+  { icon: <FiPhone />, label: 'Телефон', value: '098 471 58 91', href: 'tel:+380984715891' },
+  { icon: <BiLogoTelegram />, label: 'Telegram', value: '@uliaushenko', href: 'https://t.me/uliaushenko' },
+  { icon: <FiMail />, label: 'Пошта', value: 'uliaushenko@gmail.com', href: 'mailto:uliaushenko@gmail.com' },
+  { icon: <FiMapPin />, label: 'Місто', value: 'м. Кременчук' },
+];
 
 function Contact() {
 
   const [email, setEmail] = useState('');
   const [text, setText] = useState('');
+  const [sending, setSending] = useState(false);
+
+  const handleSend = async (e) => {
+    e.preventDefault();
+    if (!/^\S+@\S+\.\S+$/.test(email.trim()) || !text.trim()) {
+      SwalFunction('Заповніть email і повідомлення', '', 'warning', 'Ok', true);
+      return;
+    }
+    setSending(true);
+    const result = await sendEmail(email.trim(), text.trim());
+    setSending(false);
+    if (result === undefined) {
+      SwalFunction('Не вдалося надіслати', 'Спробуйте ще раз трохи пізніше', 'error', 'Ok', true);
+      return;
+    }
+    setEmail('');
+    setText('');
+    SwalFunction('Дякую! Повідомлення надіслано', '', 'success', 'Ok', false, 2500);
+  };
 
   return (
-    <section className='contact'>
-      <h2 className='main__h2'>Контакти</h2>
-      {/* <hr className='main__hr'/> */}
+    <section className='section section--soft' id='contact'>
       <div className='container'>
-        <div className='contact__flex'>
-          <div className='contact-info'>
-            <div className='contact__item'><HiPhone className='contact__email-icon' /><label className='contact__label contact__label-number'>0984715891</label></div>
-            <div className='contact__item'><BiLogoTelegram className='contact__email-icon' /><label className='contact__label'>@uliaushenko</label></div>
-            <div className='contact__item'><FaLocationDot className='contact__email-icon' /><label className='contact__label'>м. Кременчук</label></div>
-            <div className='contact__item'><MdEmail className='contact__email-icon' /><label className='contact__label'>uliaushenko@gmail.com</label></div>
-          </div>
+        <div className='section-head'>
+          <h2>Написати авторці</h2>
+        </div>
+        <div className='contact'>
+          <ul className='contact__list'>
+            {CONTACTS.map(item => {
+              const inner = (
+                <>
+                  <span className='contact__icon' aria-hidden='true'>{item.icon}</span>
+                  <span>
+                    <span className='contact__label'>{item.label}</span>
+                    <span className='contact__value'>{item.value}</span>
+                  </span>
+                </>
+              );
+              return (
+                <li key={item.label}>
+                  {item.href
+                    ? <a className='contact__item' href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel='noreferrer'>{inner}</a>
+                    : <div className='contact__item'>{inner}</div>}
+                </li>
+              );
+            })}
+          </ul>
 
-          <div className='contact__email'>
-            <h3 className='main__h3'>Написати нам</h3>
-            <div className='contact__email-item-div'>
-              <input className='contact__email-item' placeholder='Введіть еmail' value={email} onChange={(e) => setEmail(e.target.value)} /></div>
-            <div className='contact__email-item-div'>
-              <textarea placeholder='Введіть повідомлення' className='contact__email-item contact-item-last' value={text} onChange={(e) => setText(e.target.value)}></textarea>
-              <button className='contact__email-button' onClick={() => sendEmail(email, text)}>ВІДПРАВИТИ</button>
-              </div>
-            {/* <div className='contact__email-item-div-center'><button className='contact__email-button' onClick={() => sendEmail(email, text)}>ВІДПРАВИТИ</button></div> */}
-          </div></div></div>
-
+          <form className='contact__form card' onSubmit={handleSend} noValidate>
+            <label className='field'>
+              <span>Ваш email</span>
+              <input type='email' placeholder='name@example.com' autoComplete='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+            </label>
+            <label className='field'>
+              <span>Повідомлення</span>
+              <textarea rows='5' placeholder='Що ви хочете сказати?' value={text} onChange={(e) => setText(e.target.value)} />
+            </label>
+            <button type='submit' className='btn' disabled={sending}>
+              <FiSend aria-hidden='true' /> {sending ? 'Надсилаю…' : 'Відправити'}
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
   )
 }

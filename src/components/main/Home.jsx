@@ -1,28 +1,36 @@
-
 import './style.css';
-import BigFoto from '../../imgs/BigFoto-removebg.png';
-import { NavLink } from "react-router-dom";
-
+import BigFoto from '../../imgs/BigFoto-removebg.webp';
+import { Link } from 'react-router-dom';
+import { FiArrowRight } from 'react-icons/fi';
 
 function Home() {
-
   return (
-    <div className='main-color'>
-          <section className='main__my'>
-          <article className='main__my-article-rigth'>
-              <img alt='Юлія Ющенко' className='main__my-img' src={BigFoto} />
-              {/* <div className='main__my-div_rectangle-top'></div><div className='main__my-div_rectangle-left'></div> */}
-            </article>
-            <article className='main__my-article-left'>
-              <h1 className='main__my-h1'>Юлія Ющенко</h1>
-              <p className='main__my-p'>Авторка більше, як 14 книг з великим досвідом написання віршів/прози.</p>
-              <div className='main-button-flex'>
-              <div className='main__my-button'><NavLink to='/about_me'>ДОКЛАДНІШЕ</NavLink></div>
-              <div className='main__my-button main__my-button2'><a >НАПИСАТИ НАМ</a></div>
-              </div>
-            </article>
-            
-          </section></div>
+    <section className='hero'>
+      <div className='container hero__grid'>
+        <div className='hero__text'>
+          <span className='eyebrow'>Поетеса · Кременчук</span>
+          <h1 className='hero__title'>Юлія <span>Ющенко</span></h1>
+          <p className='hero__lead'>
+            Авторка понад 14 книг віршів і прози. Слово про час, пам’ять і рідну землю.
+          </p>
+          <div className='hero__cta'>
+            <Link to='/poems' className='btn'>Читати вірші <FiArrowRight aria-hidden='true' /></Link>
+            <Link to='/books' className='btn btn--ghost'>Книги</Link>
+          </div>
+          <p className='hero__more'>
+            <Link to='/about_me' className='link-arrow'>Про авторку <FiArrowRight aria-hidden='true' /></Link>
+          </p>
+        </div>
+
+        <div className='hero__art'>
+          <div className='hero__frame'>
+            <img src={BigFoto} alt='Юлія Ющенко' width='440' height='550' />
+          </div>
+          <div className='hero__chip hero__chip--books'><strong>14+</strong> книг</div>
+          <div className='hero__chip hero__chip--city'>Кременчук</div>
+        </div>
+      </div>
+    </section>
   )
 }
 

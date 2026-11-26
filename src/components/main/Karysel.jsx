@@ -4,60 +4,40 @@ import Slide3 from '../../imgs/Slide3.JPG';
 import './style.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
+const SLIDES = [Slide1, Slide2, Slide3];
 
 function Karysel() {
 
   const settings = {
     dots: true,
+    arrows: false,
     infinite: true,
-    speed: 1000,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4500,
     pauseOnHover: true,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    adaptiveHeight: false
   };
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: 'block', position: 'absolute', right: '10vh', zIndex: 1}}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: 'block', position: 'absolute', left: '10vh', zIndex: 1 }}
-        onClick={onClick}
-      />
-    );
-  }
-
 
   return (
-    <section className='gallery'>
-     
-        <Slider {...settings}>
-          <div>
-            <img src={Slide1} alt='slide-img' className='slide-img' />
-          </div>
-          <div>
-            <img src={Slide2} alt='slide-img' className='slide-img' />
-          </div>
-          <div>
-            <img src={Slide3} alt='slide-img' className='slide-img' />
-          </div>
-        </Slider>
+    <section className='section section--soft'>
+      <div className='container'>
+        <div className='section-head'>
+          <h2>З архіву</h2>
+        </div>
+        <div className='slider'>
+          <Slider {...settings}>
+            {SLIDES.map((src, i) => (
+              <div key={i}>
+                <img src={src} alt={`Фото з архіву Юлії Ющенко, ${i + 1}`} className='slide-img' loading={i === 0 ? 'eager' : 'lazy'} />
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </div>
     </section>
   )
 }

@@ -3,6 +3,7 @@ export const books_items = [
   {
   'id': 1,
   'title': 'Час відкриває істину',
+  'readable': true,
   'text': 'Короткий опис бла баб лабвав ваппв впккп вп вп в впв  в вп в вп впвкпвп вкпв вп в в вп вкпп',
   'foto': 'TimeOpen.jpg',
   'price': 110

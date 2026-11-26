@@ -1,43 +1,34 @@
-import {useNavigate} from "react-router-dom";
 import './style.css';
-import Kobzar from '../../imgs/Kobzar.jpg';
-import TimeOpen from '../../imgs/TimeOpen.jpg';
-import Vihola from '../../imgs/Vihola.jpg';
 
+const IMG = process.env.PUBLIC_URL + '/img/';
+
+const EVENTS = [
+  { img: '630_360_1464091424-2360.png', date: '2006, Київ', text: 'Була присутня на IV Всесвітньому форумі українців' },
+  { img: '2.jpg', date: '2009, Лондон, Англія', text: 'Відвідала ......жінок.....' },
+  { img: 'IMG_3816.JPG', date: '20011, Чорнобиль', text: 'Вкотре побувала на своїй рідній Луб\'янці' },
+  { img: '2.jpg', date: '2016, Кременчук', text: 'Презентувала свою нову книгу....' },
+];
 
 function Events() {
-
-  const navigate = useNavigate();
-
   return (
-    <div className='container'>
-          <section className='events'>
-            <h2 className='main__h2' >Події</h2>
-            {/* <hr className='main__hr'/> */}
-            <article className="events-container">
-              <div className="event-item">
-                <img className="event-img" src={'./img/' + '630_360_1464091424-2360.png'}/>
-                <p className="event-data">2006, Київ</p>
-                <p className="event-text">Була присутня на IV Всесвітньому форумі українців</p>
-              </div>
-              <div className="event-item">
-                <img className="event-img" src={'./img/' + '2.jpg'}/>
-                <p className="event-data">2009, Лондон, Англія</p>
-                <p className="event-text">Відвідала ......жінок.....</p>
-              </div>
-              <div className="event-item">
-                <img className="event-img" src={'./img/' + 'IMG_3816.JPG'}/>
-                <p className="event-data">20011, Чорнобиль</p>
-                <p className="event-text">Вкотре побувала на своїй рідній Луб'янці</p>
-              </div>
-              <div className="event-item">
-                <img className="event-img" src={'./img/' + '2.jpg'}/>
-                <p className="event-data">2016, Кременчук</p>
-                <p className="event-text">Презентувала свою нову книгу....</p>
-              </div>
-            </article>
-          </section>
+    <section className='section'>
+      <div className='container'>
+        <div className='section-head'>
+          <h2>Події</h2>
         </div>
+        <ol className='events'>
+          {EVENTS.map((event, i) => (
+            <li key={i} className='event card'>
+              <img className='event__img' src={IMG + event.img} alt='' loading='lazy' />
+              <div className='event__body'>
+                <span className='event__date'>{event.date}</span>
+                <p className='event__text'>{event.text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
   )
 }
 

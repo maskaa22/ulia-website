@@ -1,22 +1,28 @@
 import './style.css'
 import React from 'react';
-import { FaRegCopyright } from "react-icons/fa6";
+import { NavLink, Link } from 'react-router-dom';
 
-export class Footer extends React.Component {
-
-render() {
+function Footer() {
   return (
     <footer className='footer'>
-       <div className='container footer-height'>
-        
-        <div className='footer-flex'>
-        <div className='footer-center footer-pos'><div className='circle'/><span className='header__logo'>Юлія Ющенко</span></div>
-          <div><FaRegCopyright /> 2023 Всі права захищені.</div>
+      <div className='container footer__grid'>
+        <div className='footer__about'>
+          <span className='footer__brand'>Юлія Ющенко</span>
+          <p>Поетеса з Кременчука. Вірші, книги та події.</p>
         </div>
-       </div>
+
+        <nav className='footer__nav' aria-label='Навігація внизу сторінки'>
+          <NavLink to='/poems'>Вірші</NavLink>
+          <NavLink to='/books'>Книги</NavLink>
+          <NavLink to='/galarys'>Галерея</NavLink>
+          <NavLink to='/comments'>Відгуки</NavLink>
+          <Link to='/#contact'>Контакти</Link>
+        </nav>
+
+        <p className='footer__copy'>© {new Date().getFullYear()} Юлія Ющенко. Всі права захищені.</p>
+      </div>
     </footer>
   )
 }
 
-}
 export default Footer;
