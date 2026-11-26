@@ -2,7 +2,12 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(2rem, 6vw, 5rem) clamp(2.5rem, 6vw, 5rem);
+  /* fill the screen under the sticky 68px header; svh = real visible height on phones */
+  min-height: calc(100vh - 68px);
+  min-height: calc(100svh - 68px);
+  display: flex;
+  align-items: center;
+  padding-block: clamp(2rem, 5vh, 4rem);
 }
 
 .hero::before {
@@ -18,13 +23,13 @@
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
 
 .hero__title {
-  font-size: clamp(3rem, 8.5vw, 5.8rem);
+  font-size: clamp(3rem, min(8.5vw, 12vh), 6.4rem); /* grows with the screen height too */
   line-height: 1.02;
 }
 
@@ -55,7 +60,7 @@
 .hero__art {
   position: relative;
   justify-self: center;
-  width: min(100%, 440px);
+  width: min(100%, 560px, 60vh);
 }
 
 .hero__frame {

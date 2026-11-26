@@ -1,19 +1,31 @@
-import { useState } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { FiShare2, FiMessageSquare } from 'react-icons/fi';
 import { SwalFunction } from '../../utils/SwalFunction';
 import BasicRating from './BasicRating';
 import './style.css';
 import { useSelector } from 'react-redux';
 
-const CLAMP_LINES = 14;
-
 function Poem({ poem, handleOpen, setPoem_id }) {
 
   const isAuth = useSelector(state => state.user.isAuth);
   const currentUser = useSelector(state => state.user.currentUser);
   const [expanded, setExpanded] = useState(false);
+  const [overflowing, setOverflowing] = useState(false);
+  const textRef = useRef(null);
 
-  const isLong = (poem.text || '').split('\n').length > CLAMP_LINES;
+  // Collapsed cards all have the same text height; the "read more" button
+  // is shown only when this poem really does not fit into it.
+  useLayoutEffect(() => {
+    const el = textRef.current;
+    if (!el) return undefined;
+    const check = () => {
+      if (!expanded) setOverflowing(el.scrollHeight > el.clientHeight + 1);
+    };
+    check();
+    window.addEventListener('resize', check);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(check);
+    return () => window.removeEventListener('resize', check);
+  }, [expanded, poem.text]);
 
   const share = async () => {
     const shareData = { title: poem.name, text: `${poem.name}\n\n${poem.text}`, url: window.location.href };
@@ -38,15 +50,19 @@ function Poem({ poem, handleOpen, setPoem_id }) {
     }
   };
 
+  const textClass = `poem__text ${expanded ? '' : 'is-collapsed'} ${!expanded && overflowing ? 'is-faded' : ''}`;
+
   return (
     <article className='poem card'>
       <h2 className='poem__title'>{poem.name}</h2>
-      <div className={`poem__text ${isLong && !expanded ? 'is-clamped' : ''}`}>{poem.text}</div>
-      {isLong && (
-        <button className='link-btn poem__more' onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
-          {expanded ? 'Згорнути' : 'Читати повністю'}
-        </button>
-      )}
+      <div ref={textRef} className={textClass}>{poem.text}</div>
+      <div className='poem__more-wrap'>
+        {(overflowing || expanded) && (
+          <button className='link-btn' onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
+            {expanded ? 'Згорнути' : 'Читати повністю'}
+          </button>
+        )}
+      </div>
       <div className='poem__foot'>
         <BasicRating id={poem._id} rating={poem.rating} />
         <div className='poem__actions'>
